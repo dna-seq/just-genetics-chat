@@ -17,7 +17,7 @@ This fork of the just-chat repository adds specialized functionality for genetic
 
 Users can upload their genetic data files directly in the UI for personalized analysis:
 
-1. Generate a genetic report from our oakvar deployment [https://oakvar.agingkills.eu/] or your own deployment
+1. Generate a genetic report from [our oakvar deployment](https://oakvar.agingkills.eu/) or your own deployment
 2. Export the interesting for you part of the report as a CSV file
 3. Upload the file in the just-genetics-chat interface after activating the "Genetics Genie" agent
 4. Chat with the Genetics Genie to interpret your genetic data and understand potential health implications
@@ -60,7 +60,7 @@ The default free Groq API key included in this repository has token limitations 
    HUGGINGFACEHUB_API_KEY=your_personal_key_here
    ```
 
-This is a fork of just-chat project [https://github.com/longevity-genie/just-chat]
+This is a fork of [just-chat project](https://github.com/longevity-genie/just-chat)
 Everything below is from the original just-chat README.md file. There you can find more information about deployment.
 
 ---

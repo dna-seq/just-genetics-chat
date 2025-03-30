@@ -1,3 +1,80 @@
+# just-genetics-chat
+Genetics LLM agent to answer questions about your genetic data and genetics.
+
+## Genetics Features
+
+This fork of the just-chat repository adds specialized functionality for genetic analysis:
+
+- **Genetics Genie Agent**: A dedicated assistant that can analyze and explain genetic variants and their potential health implications
+- **Genetic Analysis Tools**: Built-in tools for querying information about:
+  - SNPs (rsIDs) and their associations with diseases
+  - Gene information and pathways
+  - Coronary disease, thrombophilia, lipid metabolism, and longevity markers
+  - DisGeNET database integration for comprehensive disease-gene-variant associations
+
+
+### File Upload for Genetic Analysis
+
+Users can upload their genetic data files directly in the UI for personalized analysis:
+
+1. Generate a genetic report from our oakvar deployment [https://oakvar.agingkills.eu/] or your own deployment
+2. Export the interesting for you part of the report as a CSV file
+3. Upload the file in the just-genetics-chat interface after activating the "Genetics Genie" agent
+4. Chat with the Genetics Genie to interpret your genetic data and understand potential health implications
+
+## Genetic Databases
+
+The project includes several specialized genetic databases in the `data/genetics/` directory that power the genetic analysis tools:
+
+- **coronary.sqlite**: Database of coronary disease-related genetic variants and their associations
+- **thrombophilia.sqlite**: Database of thrombophilia-related genetic variants and their clinical implications
+- **lipid_metabolism.sqlite**: Database of genetic variants related to lipid metabolism pathways
+- **longevitymap.sqlite**: Database mapping genetic variants to longevity and aging-related traits
+- **disgenet_2020.sqlite**: Comprehensive database of gene-disease-variant associations from DisGeNET
+- **disease_names.csv**: Reference file for disease name standardization and fuzzy matching
+- **dna_sequencing.txt**: Information about DNA sequencing technologies and methodologies
+
+These databases are accessed through specialized Python tools in the `agent_tools/` directory:
+- `coronary.py`: Query coronary disease-related genetic information
+- `thrombophilia.py`: Query thrombophilia-related genetic information
+- `lipidmetabolism.py`: Query lipid metabolism-related genetic information
+- `longevitymap.py`: Query longevity-related genetic information
+- `disgenet.py`: Query comprehensive disease-gene-variant associations
+- `links.py`: Helper functions to generate links to external resources (NCBI, PubMed)
+- `dna-sequencing.py`: Retrieve information about DNA sequencing technologies
+
+### Using the Genetic Tools
+
+The Genetics Genie agent is configured to use these tools automatically. When you ask questions about specific genes, variants (rsIDs), or diseases, the agent will query the appropriate databases and return relevant information.
+
+### Important Note on API Keys
+
+The default free Groq API key included in this repository has token limitations that prevent it from handling CSV file analysis effectively. For analyzing genetic data files, we strongly recommend:
+
+1. Obtaining your own Groq API key with higher token limits
+2. Adding your personal key to the `.env.keys` file in the project root directory:
+   ```
+   GROQ_API_KEY=your_personal_key_here
+   MISTRAL_API_KEY=your_personal_key_here
+   OPENAI_API_KEY=your_personal_key_here
+   HUGGINGFACEHUB_API_KEY=your_personal_key_here
+   ```
+
+This is a fork of just-chat project [https://github.com/longevity-genie/just-chat]
+Everything below is from the original just-chat README.md file. There you can find more information about deployment.
+
+---
+
+# just-chat
+Make your LLM agent and chat with it simple and fast!
+
+![Easy chat with your Agent](images/screenshot.jpg)
+*Setting up your agent and your chat in few clicks*
+
+
+
+
+
 # just-chat
 Make your LLM agent and chat with it simple and fast!
 
